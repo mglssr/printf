@@ -3,8 +3,8 @@
 #include <stdarg.h>
 
 int _printf(const char *format, ...);
-void print_char(va_list);
-void print_string(va_list);
+void print_char(va_list c);
+void print_string(va_list str);
 int _putchar(char c);
 
 /**
