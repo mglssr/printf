@@ -5,20 +5,22 @@
  *
  *
  */
-void print_char(va_list c)
+int print_char(va_list c)
 {
 	char ch;
 
 	ch = va_arg(c, int);
 
 	_putchar(ch);
+
+	return(0);
 }
 
 /**
  *
  *
  */
-void print_string(va_list str)
+int print_string(va_list str)
 {
 	char *str;
 
@@ -29,4 +31,5 @@ void print_string(va_list str)
 	return;
 	}
 	_putchar(*s++);
+	return (0);
 }
