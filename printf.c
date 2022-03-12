@@ -35,12 +35,17 @@ int _printf(const char *format, ...);
 			while (con_arr[rars].conv != '\0')
 			{
 				if (con_arr[rars].conv == format[rf + 1])
+				{
 					con_arr[rars].func(args);
+				}
+			rars++
 			}
-			rars++;
+	rf++
 	}
-	rf++;
 
+	va_end(args);
 
+	_putchar('\0');
+
+	return(_strlen(*format));
 }
-

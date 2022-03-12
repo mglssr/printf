@@ -6,6 +6,7 @@ int _printf(const char *format, ...);
 void print_char(va_list c);
 void print_string(va_list str);
 int _putchar(char c);
+int _strlen(char *s);
 
 /**
 * struct conversiones - se le asigna a cada flag del% con su respectiva funcion
