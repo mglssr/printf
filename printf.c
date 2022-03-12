@@ -13,4 +13,34 @@ int _printf(const char *format, ...);
 {
 	va_list args;
 	int rf, rars;
+
+	conv_f con_arr[] = {
+		{'c', print_char},
+		{'s', print_string},
+		{'\0', NULL}
+	};
+	
+	va_start(args, format)
+
+	rf = 0;
+	while (format != NULL && format[rf] != '\0')
+	{	
+		if (format[rf] != '%')
+		{
+			_putchar(format[rf]);
+			rf++
+		}
+		else
+			rars = 0;
+			while (con_arr[rars].conv != '\0')
+			{
+				if (con_arr[rars].conv == format[rf + 1])
+					con_arr[rars].func(args);
+			}
+			rars++;
+	}
+	rf++;
+
+
 }
+
