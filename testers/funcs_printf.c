@@ -6,28 +6,33 @@
  *
  *
  */
-void print_char(va_list c)
+int print_char(va_list c)
 {
 	char ch;
 
 	ch = va_arg(c, int);
 
 	_putchar(ch);
+
+	return (1);
 }
 
 /**
  *
  *
  */
-void print_string(va_list st)
+
+int print_string(va_list s)
 {
 	char *str;
+	int counter;
 
-	str = va_arg(st, char *);
-
-	if (str == NULL)
+	str = va_arg(s, char *);
+	
+	while (str[counter] != '\0')
 	{
-	return;
+		_putchar(str[counter]);
+		counter++;
 	}
-	_putchar(*str++);
+	return (counter);
 }

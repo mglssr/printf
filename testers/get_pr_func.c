@@ -12,17 +12,17 @@
 */
 int (*matching_func(const char *format))(va_list)
 {
-	con_f specs[] = {
-		{"c", print_char},
-		{"s", print_string},
-		{NULL, NULL}
+	conv_f specs[] = {
+		{'c', print_char},
+		{'s', print_string},
+		{'\0', NULL}
 	};
 
 	int i = 0;
 
-	while (specs[i].conv != NULL)
+	while (specs[i].conv != '\0')
 	{
-		if (*format == specs[i].conv)
+		if (specs[i].conv == *format)
 			break;
 		else
 			i++;

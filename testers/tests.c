@@ -9,5 +9,11 @@
  */
 int main(void)
 {
+
+	_printf("Hola Mundo");
+	printf("Hola Mundo");
+	_printf("%c", 'A');
+	printf("%c", 'A');
+
 	return (0);
 }
