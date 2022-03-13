@@ -7,45 +7,43 @@
 * @format: una string (pend cambio)
 * Return: retorna el numero de chars printeados
 * rf: variable que Recorre Format
-* rars: variable que Recorre ARray usando Struct
 */
 
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int rf, rars;
+	int rf;
+	int ccounter = 0;
+	int (*mfunc)(va_list);
 
-	conv_f con_arr[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'\0', NULL}
-	};
-	
 	va_start(args, format);
 
 	rf = 0;
 	while (format != NULL && format[rf] != '\0')
 	{	
-		if (format[rf] != '%')
+		while (format[rf] != '%' && format[rf] != '\0')
 		{
 			_putchar(format[rf]);
+			ccounter++;
 			rf++;
 		}
-		rars = 0;
-			while (con_arr[rars].conv != '\0')
-			{
-				if (con_arr[rars].conv == format[rf + 1])
-				{
-					con_arr[rars].func(args);
-				}
-			rars++;
-			}
-	rf++;
+
+		if (format[rf] == '%')
+
+			mfunc =	matching_func(&format[rf + 1]);
+
+		if (mfunc != NULL)
+		{
+			ccounter += mfunc(args);
+			rf += 2;
+			continue;
+		}
+		
 	}
 
 	va_end(args);
 
 	_putchar('\0');
 
-	return(0);
+	return(ccounter);
 }
