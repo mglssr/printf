@@ -12,13 +12,14 @@
 */
 int (*matching_func(const char *format))(va_list)
 {
+	
+	int i = 0;
+
 	conv_f specs[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'\0', NULL}
 	};
-
-	int i = 0;
 
 	while (specs[i].conv != '\0')
 	{

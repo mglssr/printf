@@ -9,6 +9,6 @@
  */
 int main(void)
 {
-	_printf("Character:[%s]", 'Holiwis');
+	_printf("Character:[%s]", "Holiwis");
 	return (0);
 }
