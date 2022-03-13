@@ -43,7 +43,5 @@ int _printf(const char *format, ...)
 
 	va_end(args);
 
-	_putchar('\0');
-
 	return(ccounter);
 }
