@@ -7,11 +7,13 @@ int print_char(va_list c);
 int print_string(va_list str);
 int _putchar(char c);
 int _strlen(char *s);
+int (*matching_func(const char *format))(va_list);
 
 /**
-* struct conversiones - se le asigna a cada flag del% con su respectiva funcion
-* @conv: conversor que busco matchear 
-* @func: puntero que va a ir a una de las funcs que voy a usar para printear
+* struct conversions - structure 
+* @conv: converters that we need to match
+* @func: pointer that will point to the function that matches the "flag"
+* structure alias: conv_f
 */
 typedef struct conversiones
 {
