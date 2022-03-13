@@ -24,8 +24,7 @@ int (*matching_func(const char *format))(va_list)
 	{
 		if (specs[i].conv == *format)
 			break;
-		else
-			i++;
+		i++;
 	}
 
 	return (specs[i].func);

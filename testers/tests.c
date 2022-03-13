@@ -9,12 +9,7 @@
  */
 int main(void)
 {
-	_printf("Character:[%c]\n", 'H');
+	_printf("Character:[%c]\n", 'H', 'J');
 	_printf("String:[%s]\n", "I am a string !");
-	printf("String:[%s]\n", "I am a string !");
-
-	_printf("Hola Mundo");
-	printf("Hola Mundo");
-
 	return (0);
 }

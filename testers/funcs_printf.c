@@ -25,9 +25,12 @@ int print_char(va_list c)
 int print_string(va_list s)
 {
 	char *str;
-	int counter;
+	int counter = 0;
 
 	str = va_arg(s, char *);
+
+	if (str == NULL)
+		str = "(nil)";
 	
 	while (str[counter] != '\0')
 	{
