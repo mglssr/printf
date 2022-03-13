@@ -9,7 +9,5 @@
  */
 int main(void)
 {
-	_printf("Character:[%c]\n", 'H');
-	_printf("Hola Mundo\n");
 	return (0);
 }
