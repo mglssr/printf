@@ -12,7 +12,7 @@ int print_char(va_list c)
 	char ch;
 
 	ch = va_arg(c, int);
-	
+
 	_putchar(ch);
 
 	return (1);
@@ -30,7 +30,7 @@ int print_string(va_list s)
 	int counter = 0;
 
 	str = va_arg(s, char *);
-	
+
 	if (!str)
 		str = "(null)";
 
@@ -44,8 +44,8 @@ int print_string(va_list s)
 
 /**
 * print_mod - prints the char '%'
-*	
-*
+* @mod: %
+* Return: 1
 */
 
 int print_mod(__attribute__((unused)) va_list mod)
@@ -54,5 +54,5 @@ int print_mod(__attribute__((unused)) va_list mod)
 
 	_putchar('%');
 	counter++;
-	return(counter);
+	return (counter);
 }
