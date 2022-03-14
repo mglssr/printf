@@ -40,6 +40,13 @@ int _printf(const char *format, ...)
 					rf += 2;
 					continue;
 				}
+				else 
+				{
+					_putchar('%');
+					ccounter++;
+					rf++;
+					continue;
+				}
 			}
 			else
 			{

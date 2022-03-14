@@ -9,8 +9,9 @@
  */
 int main(void)
 {
-	_printf("Character:[%s%%s] algoaswnhd\n", "Holiwis", "alhre");
-	_printf("String:[%s]%", "I am a string !");
+	_printf("Cha%racter:[%s%%s] algoaswnhd\n", "Holiwis", "alhre");
+	_printf("String:[%s%s]%", "I am a string !");
 	_printf("Character:[%c]\n", 'H');
+	_printf("%");
 	return (0);
 }
