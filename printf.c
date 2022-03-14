@@ -1,51 +1,53 @@
 #include "printf_main.h"
 #include <stdarg.h>
+#include <stdlib.h>
 
 /**
-* _printf - da un output acorde a un formato pasado (pend cambio)
-* @format: una string (pend cambio)
-* Return: retorna el numero de chars printeados
-* rf: variable que Recorre Format
-* rars: variable que Recorre ARray usando Struct
+* _printf - function that prints messages on the screen using a format
+* @format: a string (PEND)
+* Return: returns the number of characters printed
 */
 
-int _printf(const char *format, ...);
+int _printf(const char *format, ...)
 {
 	va_list args;
-	int rf, rars;
+	int rf, counter = 0;
+	int (*f)(va_list);
 
-	conv_f con_arr[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'\0', NULL}
-	};
-	
-	va_start(args, format)
+	va_start(args, format);
 
 	rf = 0;
 	while (format != NULL && format[rf] != '\0')
-	{	
-		if (format[rf] != '%')
+	{
+		if (format[rf] != '%' && format[rf] != '\0')
 		{
 			_putchar(format[rf]);
-			rf++
+			counter++;
+			rf++;
 		}
-		else
-			rars = 0;
-			while (con_arr[rars].conv != '\0')
-			{
-				if (con_arr[rars].conv == format[rf + 1])
-				{
-					con_arr[rars].func(args);
-				}
-			rars++
-			}
-	rf++
-	}
 
+		if (format[rf] == '%')
+		{
+			if (format[rf + 1] != '\0')
+			{
+				f = matching_func(&format[rf + 1]);
+
+				if (f != NULL)
+				{
+					counter += f(args);
+					rf += 2;
+					continue;
+				}
+			}
+			else
+			{
+				rf += 1;
+				continue;
+			}
+		}
+	}
 	va_end(args);
 
-	_putchar('\0');
-
-	return(_strlen(*format));
+return (counter);
 }
+

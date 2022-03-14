@@ -1,10 +1,12 @@
 #include "printf_main.h"
+#include <stddef.h>
 
 /**
  *
  *
  *
  */
+
 int print_char(va_list c)
 {
 	char ch;
@@ -13,23 +15,28 @@ int print_char(va_list c)
 
 	_putchar(ch);
 
-	return(0);
+	return(1);
 }
 
 /**
  *
  *
  */
-int print_string(va_list str)
+
+int print_string(va_list s)
 {
 	char *str;
+	int counter = 0;
 
 	str = va_arg(s, char *);
 
 	if (str == NULL)
+		str = "(nil)";
+
+	while (str[counter])
 	{
-	return;
+		_putchar(str[counter]);
+		counter++;
 	}
-	_putchar(*s++);
-	return (0);
+	return (counter);
 }
