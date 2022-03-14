@@ -15,6 +15,9 @@ int _printf(const char *format, ...)
 	int (*mfunc)(va_list);
 
 	va_start(args, format);
+	
+	if (format == NULL)
+		return(-1);
 
 	rf = 0;
 	while (format != NULL && format[rf] != '\0')
@@ -39,7 +42,7 @@ int _printf(const char *format, ...)
 					continue;
 				}
 				else
-				{
+				{	
 					_putchar('%');
 					counter++;
 					rf++;
@@ -48,8 +51,7 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				rf += 1;
-				continue;
+				return (-1);
 			}
 		}
 	}
