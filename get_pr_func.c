@@ -18,6 +18,7 @@ int (*matching_func(const char *format))(va_list)
 	conv_f specs[] = {
 		{'c', print_char},
 		{'s', print_string},
+		{'%', print_mod},
 		{'\0', NULL}
 	};
 

@@ -45,13 +45,6 @@ int _printf(const char *format, ...)
 					rf++;
 					continue;
 				}
-
-				if (format[rf + 1] == '%')
-				{
-					_putchar(format[rf + 1]);
-					return(1);
-					continue;
-				}
 			}
 			else
 			{

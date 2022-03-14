@@ -42,3 +42,17 @@ int print_string(va_list s)
 	return (counter);
 }
 
+/**
+*
+*
+*
+*/
+
+int print_mod(__attribute__((unused)) va_list mod)
+{
+	int counter = 0;
+
+	_putchar('%');
+	counter++;
+	return(counter);
+}

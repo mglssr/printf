@@ -12,6 +12,6 @@ int main(void)
 	_printf("Character:[%s] algoaswnhd\n", "Holiwis", "alhre");
 	_printf("String:[%s]%", "I am a string !");
 	_printf("Character:[%c]\n", 'H');
-	_printf("holaaaaa%%");
+	_printf("holaaaaa%%%%");
 	return (0);
 }
