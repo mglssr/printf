@@ -7,7 +7,6 @@
 * @format: a string (PEND)
 * Return: returns the number of characters printed
 */
-
 int _printf(const char *format, ...)
 {
 	va_list args;
@@ -15,10 +14,8 @@ int _printf(const char *format, ...)
 	int (*mfunc)(va_list);
 
 	va_start(args, format);
-	
 	if (format == NULL)
-		return(-1);
-
+		return (-1);
 	rf = 0;
 	while (format != NULL && format[rf] != '\0')
 	{
@@ -28,21 +25,18 @@ int _printf(const char *format, ...)
 			counter++;
 			rf++;
 		}
-
 		if (format[rf] == '%')
 		{
 			if (format[rf + 1] != '\0')
 			{
 				mfunc = matching_func(&format[rf + 1]);
-
 				if (mfunc != NULL)
-				{
-					counter += mfunc(args);
+				{	counter += mfunc(args);
 					rf += 2;
 					continue;
 				}
 				else
-				{	
+				{
 					_putchar('%');
 					counter++;
 					rf++;
@@ -50,13 +44,9 @@ int _printf(const char *format, ...)
 				}
 			}
 			else
-			{
 				return (-1);
-			}
 		}
 	}
 	va_end(args);
-
 return (counter);
 }
-
