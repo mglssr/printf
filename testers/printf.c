@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 	rf = 0;
 	while (format != NULL && format[rf] != '\0')
 	{	
-		while (format[rf] != '%' && format[rf] != '\0')
+		if (format[rf] != '%' && format[rf] != '\0')
 		{
 			_putchar(format[rf]);
 			ccounter++;
@@ -29,25 +29,28 @@ int _printf(const char *format, ...)
 		}
 
 		if (format[rf] == '%')
-
-			mfunc =	matching_func(&format[rf + 1]);
-
-		if (mfunc != NULL)
 		{
-			ccounter += mfunc(args);
-			rf += 2;
-			continue;
+			if (format[rf + 1] != '\0')
+			{	
+				mfunc =	matching_func(&format[rf + 1]);
+				
+				if (mfunc != NULL)
+				{
+					ccounter += mfunc(args);
+					rf += 2;
+					continue;
+				}
+			}
+			else
+			{
+				rf += 1;
+				continue;
+			}
+			
 		}
-		
 	}
 
 	va_end(args);
 
-
-
-
-
-
-
-	return(ccounter);
+return(ccounter);
 }
