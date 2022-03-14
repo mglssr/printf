@@ -5,6 +5,7 @@
 int _printf(const char *format, ...);
 int print_char(va_list c);
 int print_string(va_list str);
+int print_mod(va_list mod);
 int _putchar(char c);
 int (*matching_func(const char *format))(va_list);
 
