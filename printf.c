@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int rf, counter = 0;
-	int (*f)(va_list);
+	int (*mfunc)(va_list);
 
 	va_start(args, format);
 
@@ -30,11 +30,11 @@ int _printf(const char *format, ...)
 		{
 			if (format[rf + 1] != '\0')
 			{
-				f = matching_func(&format[rf + 1]);
+				mfunc = matching_func(&format[rf + 1]);
 
-				if (f != NULL)
+				if (mfunc != NULL)
 				{
-					counter += f(args);
+					counter += mfunc(args);
 					rf += 2;
 					continue;
 				}

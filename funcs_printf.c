@@ -33,7 +33,7 @@ int print_string(va_list s)
 	if (str == NULL)
 		str = "(nil)";
 
-	while (str[counter])
+	while (str[counter] != '\0')
 	{
 		_putchar(str[counter]);
 		counter++;

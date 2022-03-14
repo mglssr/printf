@@ -3,8 +3,8 @@
 #include <stdarg.h>
 
 int _printf(const char *format, ...);
-void print_char(va_list c);
-void print_string(va_list str);
+int print_char(va_list c);
+int print_string(va_list str);
 int _putchar(char c);
 int (*matching_func(const char *format))(va_list);
 
@@ -16,7 +16,7 @@ int (*matching_func(const char *format))(va_list);
 typedef struct conversiones
 {
   char conv;
-  void (*func)(va_list);
+  int (*func)(va_list);
 } conv_f;
 
 #endif
