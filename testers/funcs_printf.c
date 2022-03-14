@@ -39,3 +39,9 @@ int print_string(va_list s)
 	}
 	return (counter);
 }
+
+/**
+ *
+ *
+ */
+int print_
