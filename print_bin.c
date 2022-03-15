@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stddef.h>
 /**
- *print_binary - print in binary
+ *print_bin - print in binary
  *@b: argument pass as number to convert to binary
  *Return: binary number's count
  */
@@ -33,8 +33,7 @@ int print_bin(va_list b)
 			index = 0;
 			while (rem > 0)
 			{
-				guardaval[index] = ((rem % 2) + 48);
-				index++;
+				guardaval[index] = ((rem % 2) + 48), index++;
 				rem = rem / 2;
 			}
 			while (index != 0)
