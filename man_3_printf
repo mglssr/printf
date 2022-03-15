@@ -1,4 +1,4 @@
-_PRINTF MANUAL PAGE
+PRINTF MANUAL PAGE
 
 NAME:
       _printf - formatted output conversion
@@ -15,14 +15,10 @@ Format of the format string:
   The format string is a character string, beginning and ending its initial shift state, if any that specifies how subsequent arguments are converted for ou
   Format of the format string:
     
-The format string is a character string, beginning and ending its initial shift state, if any. The format string is composed of zero or more directives: ordinary characters (exclude %), which are copied unchanged to the output stream
+The format string is a character string, beginning and ending its initial shift state, if any. The format string is composed of zero or more directives: ordinary characters (exclude %), which are copied unchanged to the output stream; and conversion specifications, each of which results in fectching zero or more subsequent arguments. Each conversion specification is introduced by the character %, and ends with a conversion specifier.
 
 OPTIONS:
-
-
-
-
-
+        Conversion specifiers
 
 BUGS:
 
