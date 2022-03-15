@@ -11,6 +11,7 @@ int print_uint(va_list u);
 int print_oct(va_list oc);
 int print_mod(va_list mod);
 int print_bin(va_list b);
+int print_revs(va_list str);
 int _putchar(char c);
 int (*matching_func(const char *format))(va_list);
 
