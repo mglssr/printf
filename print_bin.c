@@ -27,7 +27,7 @@ int print_bin(va_list b)
 			contbin++;
 		}
 		rem = argu;
-		guardaval = malloc((sizeof(char) * 1) + 1);
+		guardaval = malloc((sizeof(char) * contbin) + 1);
 		if (guardaval)
 		{
 			index = 0;
