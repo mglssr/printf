@@ -1,0 +1,35 @@
+_PRINTF MANUAL PAGE
+
+NAME:
+      _printf - formatted output conversion
+
+SYNOPSIS:
+        #include "main.h"
+
+        int _printf(const char *format, ...)
+
+DESCRIPTION:
+            The function _printf() produce output according a format as described below, it fuction writes output to stdout (standard output) under the control of a format string that specifies how subsequent arguments are converted for output.
+
+Format of the format string:
+  The format string is a character string, beginning and ending its initial shift state, if any that specifies how subsequent arguments are converted for ou
+  Format of the format string:
+    
+The format string is a character string, beginning and ending its initial shift state, if any. The format string is composed of zero or more directives: ordinary characters (exclude %), which are copied unchanged to the output stream
+
+OPTIONS:
+
+
+
+
+
+
+BUGS:
+
+
+AUTHORS:
+        Written by Joaquín Dominguez and Maia Iglesias.
+
+SEE ALSO:
+          printf(3)
+
