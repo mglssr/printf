@@ -21,6 +21,7 @@ int (*matching_func(const char *format))(va_list)
 		{'i', print_int},
 		{'d', print_int},
 		{'b', print_bin},
+		{'u', print_uint},
 		{'%', print_mod},
 		{'\0', NULL}
 	};

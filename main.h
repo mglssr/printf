@@ -7,6 +7,7 @@ int _printf(const char *format, ...);
 int print_char(va_list c);
 int print_string(va_list str);
 int print_int(va_list n);
+int print_uint(va_list u);
 int print_mod(va_list mod);
 int print_bin(va_list b);
 int _putchar(char c);

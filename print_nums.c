@@ -46,3 +46,42 @@ int print_int(va_list n)
 	}
 	return (countnum);
 }
+
+/**
+ *print_uint - print an unsigned integer
+ *@u: number to be converted as an u.i
+ *Return: number of digits printed
+ */
+int print_uint(va_list u)
+{
+	unsigned int dc, dig, nat;
+	unsigned int num = va_arg(u, unsigned int);
+	int countnum = 0;
+	double f = 1;
+
+	if (num == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
+	else
+	{
+		nat = num;
+		while (f <= nat)
+		{
+			f = f * 10;
+		}
+
+		dc = f / 10;
+
+		while (dc >= 1)
+		{
+			dig = nat / dc;
+			_putchar(dig + '0'), countnum++;
+			nat = (nat - (dc * dig));
+			dc = dc / 10;
+		}
+	}
+	return (countnum);
+}
