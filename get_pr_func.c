@@ -20,6 +20,7 @@ int (*matching_func(const char *format))(va_list)
 		{'s', print_string},
 		{'i', print_int},
 		{'d', print_int},
+		{'b', print_bin},
 		{'%', print_mod},
 		{'\0', NULL}
 	};
