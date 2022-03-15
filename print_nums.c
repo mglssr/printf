@@ -26,12 +26,15 @@ int print_int(va_list n)
 			_putchar('-');
 			countnum++;
 		}
+		else
+			nat = num;
 
 		while (f <= nat)
 		{
 			f = f * 10;
-			dc = f / 10;
 		}
+
+		dc = f / 10;
 
 		while (dc >= 1)
 		{
