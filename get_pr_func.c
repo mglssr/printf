@@ -24,6 +24,7 @@ int (*matching_func(const char *format))(va_list)
 		{'u', print_uint},
 		{'o', print_oct},
 		{'r', print_revs},
+		{'R', print_rot},
 		{'%', print_mod},
 		{'\0', NULL}
 	};
