@@ -45,7 +45,7 @@ typedef struct conversiones
 
 ## get_pr_func.c
 
-Contains a function with an array made with the structure called "Conversiones", this array contains two elements in each position. The position "0" corresponds to the conversion specifier that we are looking for, one we found it, the function returns the position "1" of the array which is the function associated with the conversion specifier.
+Contains a function with an array made with the structure called "Conversiones", in each position of the array there are 2 elements, the first one corresponds to the conversion specifier we are looking for, if we find it, the loop ends and the function returns the second element that corresponds to the function that does the conversion..
 
 
 ```python
