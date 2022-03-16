@@ -18,14 +18,59 @@ Format of the format string:
 The format string is a character string, beginning and ending its initial shift state, if any. The format string is composed of zero or more directives: ordinary characters (exclude %), which are copied unchanged to the output stream; and conversion specifications, each of which results in fectching zero or more subsequent arguments. Each conversion specification is introduced by the character %, and ends with a conversion specifier.
 
 OPTIONS:
-        Conversion specifiers
+        Conversion specifiers:
+
+		d, i - The int argument is converted to signed decimal notation.
+
+		c - The argument is converted to an char, and the resulting character is written.
+
+		s - The const char * argument is expected to be a pointer to an array of character type (pointer to a string).  Characters from the array are				writen up to (but not including) a terminating null byte ('\0').
+
+		b - The argument passed is converted to binary as characters, and the result is written.
+
+		o - The argument is converted to octal as characters stored in a string, and the result is written.
+
+		u - The argument is converted to unsigned decimal notation.
+
+		R - The const char * argument is encrypted shifting each letter 13 letters down the alphabet (rot13).
+
+		r - The const char * argument is expected to be a pointer to an array of character type (pointer to a string).  Characters from the array are     
+                      writen up in reverse from (but not including) the already mentioned terminating null byte ('\0').
+
+		% - A '%' is written. No argument is converted.
+
+RETURN VALUE:
+
+	With a successful return, the functions return the number of characters printed (excluding the null byte used to end output to strings).
+	If an output error is encountered, a negative value is returned.
 
 BUGS:
+	This program doesn't hold responsible for adding flags, fields, precision, or length modifiers.
 
+EXAMPLE:
 
-AUTHORS:
-        Written by Joaquín Dominguez and Maia Iglesias.
+	#include "main.h"
+
+	/**
+	*main - using function crated, print a simple character
+	*
+	*Return: 0, sucess
+	*/
+	int main(void)
+	{
+	
+	_printf("Character:[%c]\n", 'H');
+	return (0)
+	}
+	
+OUTPUT:
+	alex@ubuntu:~/c/printf$ H
+
 
 SEE ALSO:
           printf(3)
 
+AUTHORS:                                                                                                                                                          
+        Written by Joaquín Dominguez and Maia Iglesias.
+
+Holberton Shcool
